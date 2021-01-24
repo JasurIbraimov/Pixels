@@ -1,0 +1,77 @@
+ul, li {
+    list-style: none;
+}
+.calendar {
+    width: 60%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 60px 1fr;
+    font-family: 'Poppins', sans-serif;
+    grid-gap: 10px;
+    grid-template-areas:
+    "monthName monthName"
+    "count days";
+}
+.monthNameLayer {
+    grid-area: monthName;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+}
+
+.monthName {
+    transform: rotate(-90deg);
+    width: 30px;
+    font-size: 1rem;
+}
+.daysCountLayer {
+    grid-area: count;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.monthLayer
+{
+    grid-area: days;
+    display: flex;
+}
+.month {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #000000;
+}
+
+.dayCount {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.month:last-child {
+    box-shadow: 1px 0px 0px #000000;
+} 
+
+@media (max-width: 480px) {
+    .monthName {
+        width: 25px;
+        font-size: .9rem;
+    }
+
+}
+@media (max-width: 320px) {
+    .calendar  {
+        align-items: flex-end;
+    }
+    .monthName {
+        width: 23px;
+    }
+    .dayCount {
+        width: 23px;
+        height: 23px;
+
+    }
+}
